@@ -1,0 +1,249 @@
+/* Reset default styles and set global font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container styling with glassmorphism */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+/* Headings with gradient text */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #ff6f61, #de1a1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #f5f5f5;
+    margin: 30px 0 15px;
+    border-bottom: 2px solid #ff6f61;
+    padding-bottom: 5px;
+    animation: slideIn 1s ease-in-out;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-top: 20px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+/* Form styling with glassmorphism */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Input fields */
+textarea, input[type="file"], select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+textarea:focus, input[type="file"]:focus, select:focus {
+    outline: none;
+    border-color: #ff6f61;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Dropdown (Select) Styling */
+select {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #ff6f61 50%), linear-gradient(135deg, #ff6f61 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 10px 10px, 10px 10px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+select option {
+    color: #ffffff;
+    background: rgba(26, 26, 46, 0.9);
+    padding: 10px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+select:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons with gradient and hover effects */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff6f61, #de1a1a);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+    background: linear-gradient(90deg, #de1a1a, #ff6f61);
+}
+
+/* Response sections with glassmorphism */
+.model-response {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.model-response:hover {
+    transform: translateY(-3px);
+}
+
+/* Enhanced Summary Result Section */
+#summary-result {
+    background: rgb(3, 1, 1); /* Much darker green with lower opacity */
+    border: 2px solid rgb(0, 0, 0); /* Slightly darker border */
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    color: #240f0f; /* High-contrast white text */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+#summary-result strong {
+    color: #361c03; /* Bold green for "Summary:" */
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Loading and error messages */
+.loading, .error {
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.loading {
+    color: #ff6f61;
+    animation: pulse 1.5s infinite;
+}
+
+.error {
+    color: #ff4d4d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    #summary-result {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    select {
+        background-position: calc(100% - 15px) calc(1em + 2px), calc(100% - 10px) calc(1em + 2px);
+    }
+}
